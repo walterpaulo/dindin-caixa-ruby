@@ -57,6 +57,7 @@ class PedidoProdutosController < ApplicationController
       format.html { redirect_to pedido_pedido_produtos_url, notice: "Pedido produto was successfully destroyed." }
       format.json { head :no_content }
     end
+    @after_save
   end
 
   private
