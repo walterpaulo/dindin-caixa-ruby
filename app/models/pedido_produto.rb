@@ -7,7 +7,7 @@ class PedidoProduto < ApplicationRecord
   private
   def atualizada_valor_pedido
     self.pedido.valor_total = PedidoProduto.where(pedido_id: self.pedido_id).sum(:valor)
-    self
+    self.pedido.save!
   end
 
 end
