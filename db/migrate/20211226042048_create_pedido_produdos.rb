@@ -1,8 +1,7 @@
 class CreatePedidoProdudos < ActiveRecord::Migration[5.0]
   def change
     create_table :pedido_produdos do |t|
-      t.references :pedido
-      t.references :produto, foreign_key: true
+      t.references :pedido, foreign_key: true      t.references :produto, foreign_key: true
       t.float :valor
 
       t.timestamps

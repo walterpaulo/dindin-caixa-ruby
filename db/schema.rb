@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20211226042048) do
+ActiveRecord::Schema.define(version: 20211227135204) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,18 +40,19 @@ ActiveRecord::Schema.define(version: 20211226042048) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "pedido_produdos", force: :cascade do |t|
+  create_table "pedido_produtos", force: :cascade do |t|
     t.integer  "pedido_id"
     t.integer  "produto_id"
     t.float    "valor"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["pedido_id"], name: "index_pedido_produdos_on_pedido_id", using: :btree
-    t.index ["produto_id"], name: "index_pedido_produdos_on_produto_id", using: :btree
+    t.index ["pedido_id"], name: "index_pedido_produtos_on_pedido_id", using: :btree
+    t.index ["produto_id"], name: "index_pedido_produtos_on_produto_id", using: :btree
   end
 
   create_table "pedidos", force: :cascade do |t|
     t.integer  "cliente_id"
+    t.string   "valor"
     t.float    "valor_total"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
@@ -77,6 +78,7 @@ ActiveRecord::Schema.define(version: 20211226042048) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "pedido_produdos", "produtos"
+  add_foreign_key "pedido_produtos", "pedidos"
+  add_foreign_key "pedido_produtos", "produtos"
   add_foreign_key "pedidos", "clientes"
 end

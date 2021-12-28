@@ -1,6 +1,6 @@
 class PedidoProdudosController < ApplicationController
   before_action :set_pedido_produdo, only: %i[ show edit update destroy ]
-
+  before_action :set_pedido
   # GET /pedido_produdos or /pedido_produdos.json
   def index
     @pedido_produdos = PedidoProdudo.all
@@ -22,10 +22,11 @@ class PedidoProdudosController < ApplicationController
   # POST /pedido_produdos or /pedido_produdos.json
   def create
     @pedido_produdo = PedidoProdudo.new(pedido_produdo_params)
+    @pedido_produdo.pedido = @pedido
 
     respond_to do |format|
       if @pedido_produdo.save
-        format.html { redirect_to pedido_produdo_url(@pedido_produdo), notice: "Pedido produdo was successfully created." }
+        format.html { redirect_to pedido_pedido_produdo_path(@pedido, @pedido_produdo), notice: "Pedido produdo was successfully created." }
         format.json { render :show, status: :created, location: @pedido_produdo }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -59,6 +60,10 @@ class PedidoProdudosController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+    def set_pedido
+      @pedido = Pedido.find(params[:pedido_id])
+    end
+    
     def set_pedido_produdo
       @pedido_produdo = PedidoProdudo.find(params[:id])
     end

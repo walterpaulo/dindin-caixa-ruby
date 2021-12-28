@@ -2,8 +2,10 @@
 
 one:
   cliente: one
+  valor: MyString
   valor_total: 1.5
 
 two:
   cliente: two
+  valor: MyString
   valor_total: 1.5

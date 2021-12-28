@@ -65,6 +65,6 @@ class PedidosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def pedido_params
-      params.require(:pedido).permit(:cliente_id, :valor_total)
+      params.require(:pedido).permit(:cliente_id, :valor, :valor_total)
     end
 end

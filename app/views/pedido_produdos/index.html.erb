@@ -1,7 +1,12 @@
 <div class="page-header">
-  <%= link_to new_pedido_produdo_path, class: 'btn btn-primary' do %>
+  <%= link_to new_pedido_pedido_produdo_path, class: 'btn btn-primary' do %>
     <span class="glyphicon glyphicon-plus"></span>
     Novo
+  <% end %>
+
+   <%= link_to @pedido, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-arrow-left"></span>
+    Voltar para o pedido código: <%= @pedido.id %>
   <% end %>
   <h1>Lista</h1>
 </div>
@@ -10,10 +15,10 @@
   <table class="table table-striped table-bordered table-hover">
     <thead>
       <tr>
-            <th>Pedido</th>
-            <th>Produto</th>
-            <th>Valor</th>
-            <th></th>
+        <th>Pedido</th>
+        <th>Produto</th>
+        <th>Valor</th>
+        <th></th>
         <th></th>
         <th></th>
       </tr>
@@ -21,12 +26,12 @@
 
     <tbody>
       <%= content_tag_for(:tr, @pedido_produdos) do |pedido_produdo| %>
-            <td><%= pedido_produdo.pedido %></td>
-            <td><%= pedido_produdo.produto %></td>
+            <td><%= pedido_produdo.produto_id %></td>
+            <td><%= pedido_produdo.produto.nome %></td>
             <td><%= pedido_produdo.valor %></td>
-            <td><%= link_to 'Mostrar', pedido_produdo %></td>
-        <td><%= link_to 'Editar', edit_pedido_produdo_path(pedido_produdo) %></td>
-        <td><%= link_to 'Apagar', pedido_produdo, method: :delete, data: { confirm: 'Confirma?' } %></td>
+            <td><%= link_to 'Mostrar', pedido_pedido_produdo_path(@pedido, pedido_produdo) %></td>
+        <td><%= link_to 'Editar', edit_pedido_pedido_produdo_path(@pedido, pedido_produdo) %></td>
+        <td><%= link_to 'Apagar', pedido_pedido_produdo_path(@pedido, pedido_produdo), method: :delete, data: { confirm: 'Confirma?' } %></td>
       <% end %>
     </tbody>
   </table>
