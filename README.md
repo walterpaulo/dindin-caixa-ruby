@@ -26,7 +26,7 @@ Faça sua gestão com este software:
 
 * Uso
     - abre o navegador;
-    - digita url http://localhost:3000
+    - abre o link -> http://localhost:3000
 
 </br>
 </br>
