@@ -18,9 +18,9 @@ Faça sua gestão com este software:
 </br>
 
 * Configuração
-    - git clone https://github.com/walterpaulo/productmanagement.git
-    - bunble install
-    - rails server
+    - clone repositório;
+    - bunble install;e
+    - rails server.
 
 </br>
 
