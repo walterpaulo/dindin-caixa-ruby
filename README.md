@@ -1,24 +1,35 @@
-# README
+# DinDin Caixa
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Faça sua gestão com este software:
+* controle de
+    - usuários;
+    - fornecedores;
+    - peditos;
+    - despesas;
+    - receitas;e
+    - peditos.
 
-Things you may want to cover:
+</br>
 
-* Ruby version
+* Tecnologia
+    - Linguagem Ruby;
+    - Framework Ruby on Rails;
 
-* System dependencies
+</br>
 
-* Configuration
+* Configuração
+    - git clone https://github.com/walterpaulo/productmanagement.git
+    - bunble install
+    - rails server
 
-* Database creation
+</br>
 
-* Database initialization
+* Uso
+    - abre o navegador;
+    - digita url http://localhost:3000
 
-* How to run the test suite
+</br>
+</br>
 
-* Services (job queues, cache servers, search engines, etc.)
+[![gplv3](https://www.gnu.org/graphics/agplv3-88x31.png)](https://www.gnu.org/licenses/gpl-3.0.html)
 
-* Deployment instructions
-
-* ...
